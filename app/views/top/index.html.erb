@@ -4,7 +4,7 @@
 
 <%= form_with scope: :search, url: 'movies', method: :get, local: true do |form| %>
     <p>
-    <%= form.label :search_query, '映画、ドラマの名前' %><br>
-    <%= form.text_field :search_query %>
+    <%= form.label :title, '映画、ドラマの名前' %><br>
+    <%= form.text_field :title %>
     </p>
 <% end %>
