@@ -3,10 +3,23 @@ class MoviesController < ApplicationController
 
   # GET /movies
   # GET /movies.json
+  #def index
+  #  @movies = Movie.all
+  #end
   def index
+    if params[:search]
+      filtering = true
+      filter_query = params[:search]
+    end
+
+    if filtering == true and filter_query[:title]
+      sql_like = "%#{filter_query[:title]}%"
+      @movies = Movie.where('title like ?', sql_like)
+      return
+    end
+    
     @movies = Movie.all
   end
-
 
   # GET /movies/1
   # GET /movies/1.json
