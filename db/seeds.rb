@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Movie.destroy_all
+Dish.destroy_all
 
 movies = []
 movies << Movie.create!(
@@ -16,4 +17,18 @@ movies << Movie.create!(
 movies << Movie.create!(
     title: 'ドクターズ～恋する気持ち',
     description: '母の死をきっかけに問題児となり祖母に引き取られることになったヘジョンは、祖母宅に下宿していた風変りでお節介な元医師で教師のジホンと出会う。'
+)
+
+dishes = []
+dishes << Dish.create!(
+    name: '唐揚げ',
+    description: 'おいしい唐揚げです'
+)
+dishes << Dish.create!(
+    name: '白身肴のフライ',
+    description: 'おいしいフライです。脂っこいです。'
+)
+dishes << Dish.create!(
+    name: 'ワカメとチクワのサラダ',
+    description: 'ワカメとチクワを合えてみました。もしかするとおいしいです。'
 )
