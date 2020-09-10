@@ -11,11 +11,14 @@
 </p>
 
 <p>
-  <strong>Related Dishes:</strong>
-  <br />
+  <strong>作品に登場した料理:</strong>
   <% @movie.dishes.each do |d| %>
-    <%= d.name %>: <%= d.description %>
-    <br />
+    <div style='margin: .5em; margin-bottom: 2em;'>
+    <div><strong><%= d.name %></strong></div>
+    <div><%== d.description %></div>
+    <div style='margin: .5em;'><a href='https://cookpad.com/search/<%= d.name %>'>クックパッドでレシピを検索</a></div>
+    <div style='margin: .5em;'><a href='https://www.google.com/search?q=<%= d.name %>'>Googleで料理を検索</a></div>
+    </div>
   <% end %>
 </p>
 
