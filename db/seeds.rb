@@ -41,6 +41,6 @@ dishes = Dish.create!(
     ]
 )
 
-dishes.each do |d|
-    d.update(movie_id: movies.sample.id)
+movies.each do |m|
+    m.dishes << dishes.sample
 end
