@@ -10,5 +10,14 @@
   <%= @movie.description %>
 </p>
 
+<p>
+  <strong>Related Dishes:</strong>
+  <br />
+  <% @movie.dishes.each do |d| %>
+    <%= d.name %>: <%= d.description %>
+    <br />
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
