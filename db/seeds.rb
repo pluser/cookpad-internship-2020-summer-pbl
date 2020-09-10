@@ -1,3 +1,4 @@
+# coding: utf-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -27,20 +28,31 @@ dishes = []
 dishes = Dish.create!(
     [
         {
-            name: '唐揚げ',
-            description: 'おいしい唐揚げです'
+            name: '鶏肉の唐揚げ',
+            description: 'おいしい唐揚げです。<br />すごくおいしいんですよ'
         },
         {
-            name: '白身肴のフライ',
-            description: 'おいしいフライです。脂っこいです。'
+            name: '白身魚のフライ',
+            description: 'おいしいフライです。<br />でも脂っこいです。'
         },
         {
             name: 'ワカメとチクワのサラダ',
             description: 'ワカメとチクワをあえてみました。もしかするとおいしいです。'
-        }
+        },
+        {
+            name: 'プルコギ',
+            description: 'プルコギは韓国料理の一つで、醤油ベースの甘口ダレで味付けした牛肉を野菜と一緒に焼いた料理です。'
+        },
+        {
+            name: 'ポップルコギ',
+            description: 'ポップルコギは韓国料理の一つで、プルコギのフグバージョンです。醤油ベースの甘口ダレで味付けしたフグをゆっくり焼いた料理です。弾力のある食感が特徴です。'
+        },
+        
     ]
 )
 
 movies.each do |m|
-    m.dishes << dishes.sample
+    2.times do |i|
+        m.dishes << dishes.sample
+    end
 end
