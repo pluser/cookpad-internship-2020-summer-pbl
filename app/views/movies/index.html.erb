@@ -1,13 +1,49 @@
 <p id="notice"><%= notice %></p>
 
+<div class='container h-100'>
+<div class='row h-100' style='padding-top: .5em;'>
+<div class='col-sm text-center'>
+
 <%= form_with scope: :search, url: 'movies', method: :get, local: true do |form| %>
   <p>
-  <%= form.label :title, '映画、ドラマの名前' %><br>
-  <%= form.text_field :title %>
+  <%= form.text_field :title, :placeholder => '映画、ドラマの名前' %>
   <%= form.submit 'さがす' %>
   </p>
 <% end %>
 
+</div>
+</div>
+
+<div class='row'><div class='col-sm' style='margin-left: 2em;'><h2>検索結果</h2></div></div>
+
+<% @movies.each do |movie| %>
+  <div class='row'>
+  <div class='col-sm'>
+  <div class="card mx-auto" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= movie.title %></h5>
+      <p class="card-text"><%= movie.description %></p>
+      <a href="<%= movie_path(movie) %>" class="btn btn-primary stretched-link text-white">登場する料理を見る</a>
+    </div>
+  </div>
+  </div>
+  </div>
+  <% end %>
+
+
+
+
+<!--
+<div class='row'>
+<% @movies.each do |movie| %>
+    <%= link_to movie.title, movie %>
+    <%= movie.description %>
+<% end %>
+</div>
+</div>
+-->
+
+<!--
 <h1>検索結果</h1>
 
 <table>
@@ -35,3 +71,5 @@
 <br>
 
 <%= link_to 'New Movie', new_movie_path %>
+
+-->
