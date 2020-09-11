@@ -1,7 +1,20 @@
 
+<div class='container h-100'>
+<div class='row h-100' style='padding-top: 5em;'>
+<div class='col-sm text-center'>
+<h1><strong>Dramatic Dish!</strong></h1>
+</div>
+<div class='col-sm text-center'>
+<h2 style='font-size: 120%;'>
+ドラマ・映画の名前で料理を検索！
+</h2>
 <%= form_with scope: :search, url: 'movies', method: :get, local: true do |form| %>
     <p>
     <%= form.text_field :title, :placeholder => '映画、ドラマの名前' %>
     <%= form.submit 'さがす' %>
     </p>
 <% end %>
+</div>
+<div class='col-sm'></div>
+</div>
+</div>
